@@ -41,7 +41,7 @@ public class App {
 
             switch (opc) {
                 case 1:
-                    escolheColecionavel();
+                    dados();
                     break;
                 case 2:
                     pesquisaIdentificacao();
@@ -65,6 +65,7 @@ public class App {
 
     public static void escolheColecionavel() {
         int opc = 0;
+        int i = 0;
 
         do {
             tipos();
@@ -72,16 +73,20 @@ public class App {
 
             switch (opc) {
                 case 1:
-                    cadastraLivro();
+                    i = 1;
+                    dados(i);
                     break;
                 case 2:
-                    cadastraDvd();
+                    i = 2;
+                    dados(i);
                     break;
                 case 3:
-                    cadastraCd();
+                    i = 3;
+                    dados(i);
                     break;
                 case 4:
-                    cadastraRevista();
+                    i = 4;
+                    dados(i);
                     break;
                 case 5:
                     System.out.println("\nVoltando ao menu principal.");
@@ -93,8 +98,8 @@ public class App {
         while (opc != 5);
     }
 
-    public static void dadosComuns() {
-        Sting nome, autor, data;
+    public static void dados(int i) {
+        String nome, autor, data;
         int identificação;
 
         System.out.println("---------- [ CADASTRO GERAL ] ----------");
@@ -111,6 +116,80 @@ public class App {
         System.out.print("Informe a identificação do item: ");
         identificação = in.nextInt();
 
+        switch (i) {
+            case 1:
+                String editoraL;
+                int anoPublicacaoL;
 
+                System.out.println("---------- [ CADASTRO LIVRO ] ----------");
+
+                System.out.print("Informe o nome da editora: ");
+                editoraL = in.next();
+
+                System.out.print("Informe o ano de publicação: ");
+                anoPublicacaoL = in.nextInt();
+
+                //ADICIONE AQUI O METÓDO PARA CRIAR O LIVRO
+
+                break;
+            case 2:
+                ArrayList <String> musicas = new ArrayList<>();
+                String genero, musica;
+                int continua = 1;
+
+                System.out.println("---------- [ CADASTRO CD's ] ----------");
+
+                System.out.print("Informe o gênero do CD: ");
+                genero = in.next();
+
+                do {
+                    System.out.print("Informe o nome das músicas: ");
+                    musica = in.next();
+                    musicas.add(musica);
+
+                    System.out.print("Deseja continua? [1 = SIM | 2 = NÃO]");
+                    continua = in.nextInt();
+                }
+                while (continua == 1);
+
+                //ADICIONE AQUI O METÓDO PARA CRIAR O CD
+                
+                break;
+            case 3:
+                String tipo, descricao;
+
+                System.out.println("---------- [ CADASTRO DVD's ] ----------");
+
+                System.out.print("Informe o tipo do DVD [MUSICAL - FILME - DADOS]: ");
+                tipo = in.next();
+
+                System.out.print("Informe a descrição do mesmo: ");
+                descricao = in.next();
+
+                //ADICIONE AQUI O METÓDO PARA CRIAR O DVD
+
+                break;
+            case 4:
+                String editoraR, assunto;
+                int anoPublicacaoR, volume;
+
+                System.out.println("---------- [ CADASTRO REVISTAS ] ----------");
+
+                System.out.print("Informe o nome da editora: ");
+                editoraR = in.next();
+
+                System.out.print("Informe o assunto do mesmo: ");
+                assunto = in.next();
+
+                System.out.print("Informe o ano de publicação: ");
+                anoPublicacaoR = in.nextInt();
+
+                System.out.print("Informe o número de volume: ");
+                volume = in.nextInt();
+
+                //ADICIONE AQUI O METÓDO PARA CRIAR A REVISTA
+
+                break;
+        }
     }
 }
