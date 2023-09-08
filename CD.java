@@ -3,7 +3,7 @@ public class CD extends Produto{
 
     private String generoMusical;
     private List<String> listaMusicas;
-    public CD(int identificacao, String nome, String dataAquisicao, List <String> autores, String generoMusical, List<String> listaMusicas) {
+    public CD(int identificacao, String nome, String dataAquisicao, String autores, String generoMusical, List<String> listaMusicas) {
         super(identificacao, nome, dataAquisicao, autores);
         this.generoMusical=generoMusical;
         this.listaMusicas=listaMusicas;

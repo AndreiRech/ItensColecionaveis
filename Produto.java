@@ -4,9 +4,9 @@ public class Produto {
     public int identificacao;
     public String nome;
     public String dataAquisicao;
-    public List <String> autores;
+    public String autores;
 
-    public Produto(int identificacao, String nome, String dataAquisicao, List <String> autores){
+    public Produto(int identificacao, String nome, String dataAquisicao, String autores){
         this.identificacao=identificacao;
         this.nome=nome;
         this.dataAquisicao=dataAquisicao;

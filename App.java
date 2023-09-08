@@ -100,7 +100,7 @@ public class App {
 
     public static void dados(int i) {
         String nome, autor, data;
-        int identificação;
+        int identificacao;
 
         System.out.println("---------- [ CADASTRO GERAL ] ----------");
 
@@ -114,7 +114,7 @@ public class App {
         data = in.next();
 
         System.out.print("Informe a identificação do item: ");
-        identificação = in.nextInt();
+        identificacao = in.nextInt();
 
         switch (i) {
             case 1:
@@ -152,8 +152,8 @@ public class App {
                 }
                 while (continua == 1);
 
-                //ADICIONE AQUI O METÓDO PARA CRIAR O CD
-                
+                CD cd = new CD(identificacao, nome, data, autor, genero, musicas);
+
                 break;
             case 3:
                 String tipo, descricao;
@@ -166,7 +166,7 @@ public class App {
                 System.out.print("Informe a descrição do mesmo: ");
                 descricao = in.next();
 
-                //ADICIONE AQUI O METÓDO PARA CRIAR O DVD
+                DVD dvd = new DVD(identificacao, nome, data, autor, tipo, descricao);
 
                 break;
             case 4:
